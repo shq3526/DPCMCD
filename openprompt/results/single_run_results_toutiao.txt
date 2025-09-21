@@ -1,0 +1,32 @@
+====================
+K-Fold Run Final Report (2025-08-24 05:13:26)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results_toutiao.txt",
+    "final_model_name": "single_run_model_toutiao.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.9863 (+/- 0.0036)
+
+--- Final Test Results ---
+Acc: 0.9903
+Pre: 0.9866
+Rec: 0.9890
+F1s: 0.9878
+====================
+

@@ -1,0 +1,3 @@
+news,recent,current,original,report
+buzzfeed,gossip,entertainment,curiosity,fun
+sensationalism,sensationalized,phishing,scam,fake,malware,bait-and-switch

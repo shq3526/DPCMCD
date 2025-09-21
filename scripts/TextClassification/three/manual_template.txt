@@ -1,0 +1,8 @@
+这是一条{"mask"}的新闻：{"placeholder": "text_a"} {"placeholder": "text_b"}，标题和内容表达的含义是一致或者不一致的
+这是一个 {"mask"} 的新闻: {"placeholder": "text_a"} {"placeholder": "text_b"}
+这是一条{"mask"}的新闻，涉及标题和内容：{"placeholder": "text_a"} {"placeholder": "text_b"}
+标题：{"placeholder": "text_a"}， 内容：{"placeholder": "text_b"}, 这条新闻属于{"mask"}
+ A {"mask"} news: {"placeholder": "text_a"}
+ {"placeholder": "text_a"} This topic is about {"mask"}
+ {"placeholder": "text_a"} is about {"mask"}
+ The topic of {"placeholder": "text_a"} is {"mask"}

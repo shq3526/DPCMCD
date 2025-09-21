@@ -1,0 +1,23 @@
+services:
+  app:
+    image: msp-master-project
+    command: ["python", "fewshot-config.py"]
+    volumes:
+      - .:/workspace
+      
+    # --- (核心修正) 添加环境变量 ---
+    environment:
+      - PYTHONPATH=/workspace
+      
+    # 配置 GPU 访问
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+              
+    # 保持标准输入输出流开启
+    stdin_open: true
+    tty: true

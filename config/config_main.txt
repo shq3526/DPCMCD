@@ -1,0 +1,42 @@
+{
+    "//": "========== 1. Path Configuration ==========",
+    "dataset_name": "toutiao",
+    "prompt_name": "three",
+
+    "//": "========== 2. Model and Framework Parameters ==========",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer_file_name": "manual_verbalizer.txt",
+
+    "//": "========== 3. Training Hyperparameters ==========",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-5,
+    "batch_size": 32,
+    "max_seq_l": 192,
+
+    "//": "========== 4. K-Fold Cross-Validation Specific Parameters ==========",
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+
+    "//": "========== 5. Few-shot Parameters (Effective only when use_k_fold=false) ==========",
+    "shot": 80,
+
+    "//": "========== 6. Other Feature Toggles ==========",
+    "use_images": true,
+
+    "//": "========== 7. Quantization Related ==========",
+    "//": "Whether to enable Quantization-Aware Training (QAT). If false, standard FP32 training is performed.",
+    "use_qat": false,
+    "//": "[Effective only when use_qat=true] Specifies the type of QAT ablation study.",
+    "//": "Options: 'per_tensor_full', 'per_tensor_linear_only', 'per_channel_full'.",
+    "//": "If use_qat=true and this is undefined, the script will default to 'per_tensor_full'.",
+    "qat_ablation_type": "per_tensor_full",
+
+    "//": "[For Evaluation] Whether to only load and evaluate a quantized model without training.",
+    "evaluate_quantized_model": false,
+    "//": "[For Evaluation] Path to the .pth weights file.",
+    "quantized_model_path": "./model_quantized_native/quantized_roberta_native.pth"
+}

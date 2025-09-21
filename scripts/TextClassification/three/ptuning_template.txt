@@ -1,0 +1,7 @@
+{"soft": "<soft>"} {"mask": "<mask>"}{"soft": "<soft>"} {"placeholder": "text_a"} {"placeholder": "text_b"}
+{"soft"} {"mask"}{"soft"}{"placeholder": "text_a"}{"placeholder": "text_b"}
+{"soft": "从新闻写作风格判断，标题：“"} {"placeholder": "text_a"} {"soft": "”，其风格更偏向于"} {"mask"} {"soft": "。"}
+{"soft": "分析以下标题的信息含量和引导性：“"} {"placeholder": "text_a"} {"soft": "”。这个标题的性质是"} {"mask"} {"soft": "的。"}
+{"soft": "这是一个"} {"mask"} {"soft": "的新闻标题："} {"placeholder": "text_a"}
+{"soft": "请判断这条新闻的传播目的。标题：“"} {"placeholder": "text_a"} {"soft": "”。其主要目的是"} {"mask"} {"soft": "。"}
+{"soft": "“"} {"placeholder": "text_a"} {"soft": "”这个标题的情感色彩是"} {"mask"} {"soft": "的。"}

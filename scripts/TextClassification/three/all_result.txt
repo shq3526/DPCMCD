@@ -1,0 +1,3 @@
+news,report,information,journalism,documentary,analysis,fact,reality,truth,history,articles,event
+clickbait,gossip,entertainment,fun,curiosity,interesting,talk,stories,headlines,rumors,speculation,buzzfeed
+fake,propaganda,nonsense,trash,junk,garbage,bullshit,misleading,sensationalism,sensationalized,phishing,malware

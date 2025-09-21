@@ -1,0 +1,26 @@
+
+================================================================================
+                        模块贡献度与量化影响分析报告 (权重替换最终版)
+================================================================================
+基准模型:
+  - FP32模型: 20250912-152324-toutiao-FP32-Acc0.9734-F1s0.9439.ckpt (精度: 0.9940, 设备: cuda)
+  - INT8模型: 20250916-200312-toutiao-QAT-Acc0.9084-F1s0.8370.ckpt (精度: 0.9038, 设备: cpu)
+  - 总精度下降: 0.0902
+
+实验方法:
+  在一个纯FP32模型骨架上，将单个模块的权重替换为从INT8模型中解包出的对应FP32权重，
+  并评估其精度。"Delta"值越小（负得越多），表示该模块被量化后对整体精度的负面影响越大。
+--------------------------------------------------------------------------------
+                       Experiment             Module  Accuracy  Delta (vs FP32)
+                    INT8 Baseline                N/A  0.903763         -0.09024
+       FP32 with INT8 Layer_6_FFN        Layer_6_FFN  0.992674         -0.00133
+ FP32 with INT8 Layer_6_Attention  Layer_6_Attention  0.992674         -0.00133
+FP32 with INT8 Layer_11_Attention Layer_11_Attention  0.993007         -0.00100
+   FP32 with INT8 Word_Embeddings    Word_Embeddings  0.994006          0.00000
+       FP32 with INT8 Soft_Prompt        Soft_Prompt  0.994006          0.00000
+                    FP32 Baseline                N/A  0.994006          0.00000
+       FP32 with INT8 Layer_0_FFN        Layer_0_FFN  0.994339          0.00033
+ FP32 with INT8 Layer_0_Attention  Layer_0_Attention  0.994339          0.00033
+      FP32 with INT8 Layer_11_FFN       Layer_11_FFN  0.994339          0.00033
+   FP32 with INT8 Prediction_Head    Prediction_Head  0.994672          0.00067
+================================================================================

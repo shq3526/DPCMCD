@@ -1,0 +1,222 @@
+====================
+Single Run Final Report (2025-08-21 15:18:26)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 10,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": false,
+    "k_folds": 5,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- Final Test Results ---
+Acc: 0.5663
+Pre: 0.5859
+Rec: 0.5803
+F1s: 0.5630
+====================
+
+====================
+K-Fold Run Final Report (2025-08-24 20:31:43)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.9866 (+/- 0.0055)
+
+--- Final Test Results ---
+Acc: 0.9822
+Pre: 0.9678
+Rec: 0.8361
+F1s: 0.8826
+====================
+
+====================
+K-Fold Run Final Report (2025-08-24 21:28:48)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.9807 (+/- 0.0062)
+
+--- Final Test Results ---
+Acc: 0.9858
+Pre: 0.9720
+Rec: 0.9380
+F1s: 0.9538
+====================
+
+====================
+K-Fold Run Final Report (2025-08-25 19:05:43)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.9840 (+/- 0.0066)
+
+--- Final Test Results ---
+Acc: 0.9848
+Pre: 0.9778
+Rec: 0.9616
+F1s: 0.9695
+====================
+
+====================
+K-Fold Run Final Report (2025-08-25 19:40:57)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.9744 (+/- 0.0127)
+
+--- Final Test Results ---
+Acc: 0.9500
+Pre: 0.9032
+Rec: 0.9381
+F1s: 0.9193
+====================
+
+====================
+K-Fold Run Final Report (2025-08-25 20:06:41)
+{
+    "dataset": "tencent",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.9675 (+/- 0.0100)
+
+--- Final Test Results ---
+Acc: 0.9496
+Pre: 0.9089
+Rec: 0.8910
+F1s: 0.8996
+====================
+
+====================
+K-Fold Run Final Report (2025-08-31 11:22:22)
+{
+    "dataset": "toutiao",
+    "model_name_or_path": "model/chinese-roberta-wwm-ext",
+    "model_type": "bert",
+    "template_id": 1,
+    "verbalizer": "manual",
+    "use_images": false,
+    "seed": 144,
+    "max_epochs": 5,
+    "learning_rate": 2e-05,
+    "batch_size": 32,
+    "max_seq_l": 192,
+    "shot": 80,
+    "use_k_fold": true,
+    "k_folds": 10,
+    "k_fold_test_split_size": 0.2,
+    "calibration": false,
+    "result_file": "results/single_run_results.txt",
+    "final_model_name": "single_run_model.ckpt"
+}
+
+--- CV Results ---
+Avg Val Acc: 0.5961 (+/- 0.0060)
+
+--- Final Test Results ---
+Acc: 0.5251
+Pre: 0.4093
+Rec: 0.4169
+F1s: 0.4079
+====================
+

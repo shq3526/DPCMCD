@@ -1,0 +1,998 @@
+============================== 诊断性消融研究脚本 (带日志) ==============================
+
+--- 正在创建【唯一】的模型实例 ---
+[LOAD_DIAG] 警告: 在加载前，模型骨架中未找到键 'prompt_model.template.soft_embeds.weight'。
+[LOAD_DIAG] !!! 错误: 在加载后，模型中也未找到键 'prompt_model.template.soft_embeds.weight'。
+✅ 模型加载成功: 20250918-001656-toutiao-FP32_MultiModal-Acc0.9657-F1s0.9296.ckpt
+
+--- 正在进行【唯一】的图像特征预处理 ---
+
+--- 正在创建【唯一】的数据加载器 ---
+
+--- 开始执行消融实验 ---
+
+-------------------- DIAGNOSING: Eval-Baseline --------------------
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+  [EVAL_DIAG] Batch 0 | Intermediate 'text_logits_output' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Intermediate 'classifier_input' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Final Logits Norm: 21.5008, Mean: -0.1624, Std: 2.1999
+  [EVAL_DIAG] Batch 0 | Prediction Entropy: 0.1896
+-------------------------------------------------------
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.2025
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 277.8942
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 271.0080
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 279.2682
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 268.4376
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.1712
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.9727
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 264.0729
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.6620
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 269.3615
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 253.6129
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 279.2956
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 252.6875
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 256.5384
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 273.8379
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 285.9152
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.1355
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 262.9987
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.0692
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 264.2151
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 275.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 262.0206
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.4759
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.7885
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 240.8228
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.4909
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 289.3058
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.0695
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.7714
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.3503
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 244.4097
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 282.1454
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.4916
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.6493
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.6432
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 244.2718
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.1944
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 267.9330
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 264.7985
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 268.1766
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.0118
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 261.7810
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.5364
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.8694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.5490
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.8239
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.9016
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 258.0838
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.1180
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 276.6172
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 284.5324
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.3003
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.0837
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.9814
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.4435
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 263.9716
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 267.4892
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 268.9894
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.4930
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.9848
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 275.1751
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.2661
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 284.0784
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 267.7482
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 276.4906
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 271.0971
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 289.7743
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 269.6552
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 289.5981
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 255.8359
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 276.9694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.2302
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 258.5312
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.4286
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 262.1037
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.3911
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 282.6158
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 253.0793
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.7128
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 263.5336
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 273.8278
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 252.4998
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.0926
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 263.6156
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 246.0505
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 256.7707
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.8900
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 274.0229
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.8252
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.0030
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.1480
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 254.9627
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+
+-------------------- DIAGNOSING: Eval-w/o Visual --------------------
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+  [EVAL_DIAG] Batch 0 | Intermediate 'text_logits_output' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Intermediate 'classifier_input' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Final Logits Norm: 21.5008, Mean: -0.1624, Std: 2.1999
+  [EVAL_DIAG] Batch 0 | Prediction Entropy: 0.1896
+---------------------------------------------------------
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.2025
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 277.8942
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 271.0080
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 279.2682
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 268.4376
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.1712
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.9727
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 264.0729
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.6620
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 269.3615
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 253.6129
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 279.2956
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 252.6875
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 256.5384
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 273.8379
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 285.9152
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.1355
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 262.9987
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.0692
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 264.2151
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 275.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 262.0206
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.4759
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.7885
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 240.8228
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.4909
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 289.3058
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.0695
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.7714
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.3503
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 244.4097
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 282.1454
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.4916
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.6493
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.6432
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 244.2718
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.1944
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 267.9330
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 264.7985
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 268.1766
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.0118
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 261.7810
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.5364
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.8694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.5490
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.8239
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.9016
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 258.0838
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.1180
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 276.6172
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 284.5324
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.3003
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.0837
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.9814
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.4435
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 263.9716
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 267.4892
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 268.9894
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.4930
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.9848
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 275.1751
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.2661
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 284.0784
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 267.7482
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 276.4906
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 271.0971
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 289.7743
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 269.6552
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 289.5981
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 255.8359
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 276.9694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.2302
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 258.5312
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.4286
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 262.1037
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.3911
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 282.6158
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 253.0793
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.7128
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 263.5336
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 273.8278
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 252.4998
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.0926
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 263.6156
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 246.0505
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 256.7707
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.8900
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 274.0229
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.8252
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.0030
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.1480
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 254.9627
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+
+-------------------- DIAGNOSING: Eval-w/o Syntactic --------------------
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+  [EVAL_DIAG] Batch 0 | Intermediate 'text_logits_output' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Intermediate 'classifier_input' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Final Logits Norm: 21.5008, Mean: -0.1624, Std: 2.1999
+  [EVAL_DIAG] Batch 0 | Prediction Entropy: 0.1896
+------------------------------------------------------------
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.2025
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 277.8942
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 271.0080
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 279.2682
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 268.4376
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.1712
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.9727
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 264.0729
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.6620
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 269.3615
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 253.6129
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 279.2956
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 252.6875
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 256.5384
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 273.8379
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 285.9152
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.1355
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 262.9987
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.0692
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 264.2151
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 275.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 262.0206
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.4759
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.7885
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 240.8228
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.4909
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 289.3058
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.0695
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.7714
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.3503
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 244.4097
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 282.1454
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.4916
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.6493
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.6432
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 244.2718
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.1944
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 267.9330
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 264.7985
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 268.1766
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.0118
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 261.7810
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.5364
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.8694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.5490
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.8239
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.9016
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 258.0838
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.1180
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 276.6172
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 284.5324
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 270.3003
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.0837
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.9814
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 259.4435
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 263.9716
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 267.4892
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 268.9894
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.4930
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.9848
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 275.1751
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 272.2661
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 284.0784
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 267.7482
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 276.4906
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 278.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 271.0971
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 289.7743
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 269.6552
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 289.5981
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 255.8359
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 276.9694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 260.2302
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 258.5312
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.4286
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 262.1037
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.3911
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 282.6158
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 253.0793
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.7128
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 263.5336
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 273.8278
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 252.4998
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.0926
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 263.6156
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 246.0505
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 256.7707
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.8900
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 274.0229
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 283.8252
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 266.0030
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 265.1480
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Text Logits Norm: 254.9627
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+
+-------------------- DIAGNOSING: Eval-Text Only --------------------
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+  [EVAL_DIAG] Batch 0 | Intermediate 'text_logits_output' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Intermediate 'classifier_input' Norm: 270.0084
+  [EVAL_DIAG] Batch 0 | Final Logits Norm: 21.5008, Mean: -0.1624, Std: 2.1999
+  [EVAL_DIAG] Batch 0 | Prediction Entropy: 0.1896
+--------------------------------------------------------
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.0084
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.2025
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 277.8942
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 271.0080
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 279.2682
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 268.4376
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.1712
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.9727
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 264.0729
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.6620
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 269.3615
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 253.6129
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 279.2956
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 252.6875
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 256.5384
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 273.8379
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 285.9152
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.1355
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 262.9987
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.0692
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 264.2151
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 275.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 262.0206
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.4759
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.7885
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 240.8228
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.4909
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 289.3058
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.0695
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.7714
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.3503
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 244.4097
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 282.1454
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.4916
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.6493
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.6432
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 244.2718
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.1944
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 267.9330
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 264.7985
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 268.1766
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.0118
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 261.7810
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.5364
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.8694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.5490
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.8239
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.9016
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 258.0838
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.1180
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 276.6172
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 284.5324
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 270.3003
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.0837
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.9814
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 259.4435
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 263.9716
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 267.4892
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 268.9894
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.4930
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.9848
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 275.1751
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 272.2661
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 284.0784
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 267.7482
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 276.4906
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 278.0043
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 271.0971
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 289.7743
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 269.6552
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 289.5981
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 255.8359
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 276.9694
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 260.2302
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 258.5312
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.4286
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 262.1037
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.3911
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 282.6158
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 253.0793
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.7128
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 263.5336
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 273.8278
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 252.4998
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.0926
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 263.6156
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 246.0505
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 256.7707
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.8900
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 274.0229
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 283.8252
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 266.0030
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 265.1480
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+    [FORWARD_DIAG] Ablating visual: Using zero vector for image_features.
+    [FORWARD_DIAG] Text Logits Norm: 254.9627
+    [FORWARD_DIAG] Image Features Norm: 0.0000
+
+--- 实验完成，生成最终报告 ---
+
+              Accuracy Macro Precision Macro Recall Macro F1-Score
+Baseline         97.20           95.09        94.95          94.98
+w/o Visual       97.20           95.09        94.95          94.98
+w/o Syntactic    97.20           95.09        94.95          94.98
+Text Only        97.20           95.09        94.95          94.98

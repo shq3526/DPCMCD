@@ -1,0 +1,2 @@
+clickbait,buzzfeed,sensationalism,sensationalized,click-fraud,malware,bait-and-switch,phishing,rickrolling,fake,scam
+news,recent,other,current,hot,fresh,original,linguistics,baby,late,early
