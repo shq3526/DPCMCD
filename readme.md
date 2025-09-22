@@ -149,6 +149,3 @@ An additional script is provided to perform ablation studies on the teacher mode
 ```bash
 python ablation_study_teacher_model.py
 ```
-
-```
-```
