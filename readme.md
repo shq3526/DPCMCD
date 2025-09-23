@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## 3\. Download Pre-trained Models
 
-This project relies on several pre-trained models. If they are not already included, you must download them.
+This project relies on several pre-trained models. If they are not already included, you can pre-download them.
 
 1.  **Create a `model` directory** in the project root:
 
