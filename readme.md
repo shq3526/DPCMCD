@@ -1,180 +1,207 @@
-# Dual-Path Compression for Real-Time Multimodal Clickbait Detection: Quantization and Distillation
+
+# Dual-Path Compression for Real-Time Multimodal Clickbait Detection
+### Quantization and Distillation
+
+![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C?logo=pytorch&logoColor=white)
+![PyG](https://img.shields.io/badge/PyG-Graph_Neural_Network-3C2179)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 This project explores two primary techniques for optimizing a multi-modal classification model: **Knowledge Distillation** and **Quantization-Aware Training (QAT)**.
 
-## 1. Prerequisites
+---
 
-Before you begin, ensure you have the following installed:
-* **Python**: Version 3.10 is recommended.
-* **GPU**: An NVIDIA GPU is highly recommended for training.
+## 🛠️ Prerequisites
 
-## 2. Setup & Installation
+Before you begin, ensure your environment meets the following requirements:
 
-Follow these steps to set up your project environment.
+| Component | Recommendation |
+| :--- | :--- |
+| **Python** | Version **3.10** |
+| **GPU** | NVIDIA GPU (Highly recommended for training) |
+| **OS** | Linux / macOS / Windows |
 
-#### Step 1: Create and Activate a Virtual Environment
-Using a virtual environment is recommended to avoid conflicts with other projects.
+---
 
-* **Create the environment** (this will create a `.venv` folder):
-    * On **Linux / macOS**:
-        ```bash
-        python3 -m venv .venv
-        ```
-    * On **Windows**:
-        ```bash
-        python -m venv .venv
-        ```
-* **Activate the environment**:
-    * On **Linux / macOS**:
-        ```bash
-        source .venv/bin/activate
-        ```
-    * On **Windows (PowerShell)**:
-        ```bash
-        .venv\Scripts\Activate.ps1
-        ```
+## 🚀 Setup & Installation
 
-#### Step 2: Install PyTorch and PyTorch Geometric (PyG)
-* **PyTorch**: Visit the [official PyTorch website](https://pytorch.org/get-started/locally/) to generate the correct installation command for your specific OS and CUDA version.
-* **PyG**: Follow the [official PyG installation guide](https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html) to install PyTorch Geometric.
+#### 1. Create and Activate Virtual Environment
 
-#### Step 3: Install Project Dependencies
-Install all other required packages using the `requirements.txt` file:
+<details>
+<summary>Click to expand setup instructions for your OS</summary>
+
+**Linux / macOS**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+
+```
+
+**Windows (PowerShell)**
+
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+
+```
+
+</details>
+
+#### 2. Install Core Dependencies
+
+* **PyTorch**: Visit [pytorch.org](https://pytorch.org/get-started/locally/) for your specific CUDA version.
+* **PyG**: Follow the [PyTorch Geometric guide](https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html).
+
+#### 3. Install Project Requirements
+
 ```bash
 pip install -r requirements.txt
-````
 
-## 3\. Download Pre-trained Models
+```
 
-This project relies on several pre-trained models. If they are not already included, you can pre-download them.
+---
 
-1.  **Create a `model` directory** in the project root:
+## 📥 Model Zoo & Preparation
 
-    ```bash
-    mkdir model
-    ```
+This project relies on several pre-trained foundation models. Please download them into the `model/` directory.
 
-2.  **Download the models**:
+```bash
+mkdir model && cd model
+git lfs install
 
-    ```bash
-    # Navigate into the model directory
-    cd model
+```
 
-    # Install Git LFS (required for large model files)
-    git lfs install
+| Model Type | Repository URL | Local Command |
+| --- | --- | --- |
+| **Text Encoder** | [hfl/chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext) | `git clone https://huggingface.co/hfl/chinese-roberta-wwm-ext` |
+| **Vision Encoder** | [openai/clip-vit-base-patch32](https://huggingface.co/openai/clip-vit-base-patch32) | `git clone https://huggingface.co/openai/clip-vit-base-patch32` |
+| **LTP Model** | [LTP/small](https://huggingface.co/LTP/small) | `cd .. && git clone https://huggingface.co/LTP/small LTP/small` |
 
-    # Clone model repositories
-    git clone [https://huggingface.co/hfl/chinese-roberta-wwm-ext](https://huggingface.co/hfl/chinese-roberta-wwm-ext)
-    git clone [https://huggingface.co/openai/clip-vit-base-patch32](https://huggingface.co/openai/clip-vit-base-patch32)
+> **Note:** External download links for trained distilled/quantized models are currently unavailable. Please follow the **Training Routes** below to generate them locally.
 
-    # The scripts also require the LTP model. Clone it into the project root.
-    cd ..
-    git clone [https://huggingface.co/LTP/small](https://huggingface.co/LTP/small) LTP/small
-    ```
+---
 
-## 4\. Obtaining Trained/Distilled Models (Optional)
+## ⚡ Technical Routes
 
-The repository does not include pre-trained distilled or quantized models to keep the repository size manageable. These large model files are excluded from version control. You have the following options to obtain them:
-
-### Option 1: Train the Models Yourself (Recommended)
-
-Follow the workflows described in sections below to train and generate the models:
-- For distilled models, follow **Route 1: Model Distillation** workflows
-- For quantized models, follow **Route 2: Model Quantization**
-
-### Option 2: Download from External Storage
-
-If available, you can download pre-trained models from:
-- **Hugging Face Model Hub**: (Link to be provided)
-- **Google Drive / 百度网盘**: (Link to be provided)
-
-After downloading, place the model files in the appropriate directories:
-- Distilled models: `./model_distilled/`
-- Quantized models: `./model_quantized_native/`
-
-### Note on Model Directories
-
-The following directories are not tracked in version control (listed in `.gitignore`):
-- `model_distilled/` - Contains distilled lightweight models
-- `model_quantized_native/` - Contains quantized models
-
-## 5\. Running the Project
-
-You can follow one of the two main technical routes below.
-
------
+Choose one of the two technical routes below to run the project.
 
 ### Route 1: Model Distillation
 
-This route involves training smaller "student" models to mimic the behavior of larger "teacher" models, resulting in lightweight models that can be finetuned.
+Train smaller "student" models to mimic larger "teacher" models.
 
-#### Workflow A: Independent Distillation with Preprocessing (`nosyc` series)
+```mermaid
+graph LR
+    A[Start] --> B{Choose Workflow}
+    B -->|Independent| C[Workflow A: nosyc]
+    B -->|Synergistic| D[Workflow B: syc]
+    
+    C --> C1[Preprocess Data]
+    C1 --> C2[Distill Components]
+    C2 --> C3[Finetune Jointly]
+    
+    D --> D1[Distill Components]
+    D1 --> D2["Finetune Jointly<br>(On-the-fly)"]
 
-1.  **Preprocess Graph Data**: Convert titles into graph structures.
+```
 
-    ```bash
-    python preprocess.py
-    ```
+#### Workflow A: Independent Distillation (`nosyc`)
 
-      * **Output**: Graph files (`data_*.pt`) in the `./processed_data/` directory.
+*Pre-processes graph data before training.*
 
-2.  **Distill Models Independently**: Create lightweight versions of GAT, vision, and text models.
+1. **Preprocess Graph Data**:
+```bash
+python preprocess.py
 
-    ```bash
-    python distill_nosyc.py
-    ```
+```
 
-      * **Output**: Models saved to `./lightweight_gat_model.pth`, `./lightweight_content_model_distilled/`, and `./lightweight_vision_model_distilled/`.
 
-3.  **Finetune the Final Model**: Train the distilled models jointly on the downstream task.
+2. **Distill Models**:
+```bash
+python distill_nosyc.py
 
-    ```bash
-    python finetune_nosyc_distilled_model.py
-    ```
+```
 
-      * **Output**: The final finetuned model at `./final_lightweight_model.pth`.
 
-#### Workflow B: Synergistic Distillation with On-the-fly Processing (`syc` series)
+3. **Finetune Final Model**:
+```bash
+python finetune_nosyc_distilled_model.py
 
-1.  **Distill Models**:
+```
 
-    ```bash
-    python distill_syc.py
-    ```
 
-      * **Output**: All model components saved into the `./syc_new_lightweight_models/` directory.
+* **Output**: `./final_lightweight_model.pth`
 
-2.  **Finetune the Final Model**: This step processes graphs on-the-fly during training.
 
-    > **Note:** The output directory of `distill_syc.py` (`syc_new_lightweight_models`) does not match the input directory expected by `finetune_syc_distilled_model.py` (`syc_lightweight_models`). You must rename the directory or modify the path in one of the scripts before running.
 
-    ```bash
-    python finetune_syc_distilled_model.py
-    ```
+#### Workflow B: Synergistic Distillation (`syc`)
 
-      * **Output**: The final finetuned model at `./final_distilled_multimodal_model.pth`.
+*Processes graphs on-the-fly during training.*
 
------
+1. **Distill Models**:
+```bash
+python distill_syc.py
+
+```
+
+
+2. **Finetune Final Model**:
+> ⚠️ **Important:** The output directory of `distill_syc.py` (`syc_new_lightweight_models`) may not match the input expected by the finetuner. Please rename the folder or update the path in the script before running.
+
+
+```bash
+python finetune_syc_distilled_model.py
+
+```
+
+
+* **Output**: `./final_distilled_multimodal_model.pth`
+
+
+
+---
 
 ### Route 2: Model Quantization
 
-This route uses Quantization-Aware Training (QAT) to reduce the model's precision from FP32 to INT8, significantly accelerating inference speed with minimal accuracy loss.
+Use Quantization-Aware Training (QAT) to reduce precision (FP32 → INT8).
 
-#### Run Training (FP32 or QAT)
+```mermaid
+flowchart LR
+    A[Config] --> B[Training Script]
+    B --> C{Mode}
+    C -->|Standard| D[FP32 Training]
+    C -->|Optimized| E[QAT Training]
+    
+    F[Ablation Script] -.->|Analyze| G[Teacher Model]
 
-The primary script for this route allows you to train a model in standard full precision (FP32) or with Quantization-Aware Training (QAT). You can likely control this behavior via configuration files (e.g., `./config/config.txt`).
+```
+
+#### Run Training
+
+Control FP32 or QAT mode via your configuration file (e.g., `./config/config.txt`).
 
 ```bash
 python main_benchmark_trainer_FP32_or_QAT_with_ablation.py
+
 ```
 
 #### Run Ablation Study
 
-An additional script is provided to perform ablation studies on the teacher model, likely to analyze the impact of different components.
+Analyze the impact of different teacher model components.
 
 ```bash
 python ablation_study_teacher_model.py
-```
 
 ```
+
+---
+
+## 📂 Directory Structure Note
+
+To keep the repository lightweight, the following directories are ignored by git:
+
+* `model_distilled/` - Distilled lightweight models.
+* `model_quantized_native/` - Quantized models.
+* `model/` - Large foundation models.
+
 ```
+
