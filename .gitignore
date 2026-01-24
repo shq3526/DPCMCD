@@ -1,0 +1,26 @@
+# Model directories - contain large trained model weights
+# These files should be obtained from external sources or regenerated
+model_distilled/
+model_quantized_native/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
