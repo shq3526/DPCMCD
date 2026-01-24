@@ -203,5 +203,4 @@ To keep the repository lightweight, the following directories are ignored by git
 * `model_quantized_native/` - Quantized models.
 * `model/` - Large foundation models.
 
-```
 
