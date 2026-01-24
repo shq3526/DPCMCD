@@ -20,13 +20,9 @@ from ltp import LTP
 from tqdm import tqdm
 
 # ================== Configuration ==================
-# Source data path
 CSV_PATH = './datasets/TextClassification/toutiao/toutiao_622.csv'
-# Directory to save the preprocessed graph data
 SAVE_DIR = './processed_data'
-# Embedding dimension for GAT input, must match the main script's GAT_CONFIG["in_channels"]
 EMBEDDING_DIM = 100
-# List of LTP Part-of-Speech tags, must be consistent with the main script
 LTP_POS_LABELS = ['a', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'nd', 'nh', 'ni', 'nl', 'ns', 'nt', 'nz', 'o', 'p', 'q', 'r', 'u', 'v', 'wp', 'ws', 'x', 'z']
 # ===================================================
 
