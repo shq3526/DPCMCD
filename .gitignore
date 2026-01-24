@@ -1,6 +1,7 @@
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-*/.ipynb_checkpoints/*
+# Model directories - contain large trained model weights
+# These files should be obtained from external sources or regenerated
+model_distilled/
+model_quantized_native/
 
 # Python cache
 __pycache__/

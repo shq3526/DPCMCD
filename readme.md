@@ -72,7 +72,33 @@ This project relies on several pre-trained models. If they are not already inclu
     git clone [https://huggingface.co/LTP/small](https://huggingface.co/LTP/small) LTP/small
     ```
 
-## 4\. Running the Project
+## 4\. Obtaining Trained/Distilled Models (Optional)
+
+The repository does not include pre-trained distilled or quantized models to keep the repository size manageable. These large model files are excluded from version control. You have the following options to obtain them:
+
+### Option 1: Train the Models Yourself (Recommended)
+
+Follow the workflows described in sections below to train and generate the models:
+- For distilled models, follow **Route 1: Model Distillation** workflows
+- For quantized models, follow **Route 2: Model Quantization**
+
+### Option 2: Download from External Storage
+
+If available, you can download pre-trained models from:
+- **Hugging Face Model Hub**: (Link to be provided)
+- **Google Drive / 百度网盘**: (Link to be provided)
+
+After downloading, place the model files in the appropriate directories:
+- Distilled models: `./model_distilled/`
+- Quantized models: `./model_quantized_native/`
+
+### Note on Model Directories
+
+The following directories are not tracked in version control (listed in `.gitignore`):
+- `model_distilled/` - Contains distilled lightweight models
+- `model_quantized_native/` - Contains quantized models
+
+## 5\. Running the Project
 
 You can follow one of the two main technical routes below.
 
