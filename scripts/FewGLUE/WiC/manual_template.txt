@@ -1,1 +1,0 @@
-<text_a> [SEP] <text_b> the <meta:word>? the <mask>
